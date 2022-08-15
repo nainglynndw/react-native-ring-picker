@@ -246,8 +246,8 @@ export default class ReactNativeRingPicker extends React.Component {
         Animated.spring(this.state.pan, {
             toValue : this.CURRENT_VECTOR_DIFFERENCE_LENGTH,
             easing : Easing.linear,
-            speed : 12
-            // useNativeDriver: true // if this is used - the last click after previous release will twist back nad forward
+            speed : 12,
+            useNativeDriver: false // if this is used - the last click after previous release will twist back nad forward
         }).start();
         this.setState({
             ...this.state,
@@ -582,7 +582,8 @@ export default class ReactNativeRingPicker extends React.Component {
                 speed : 30,
                 restSpeedThreshold : 10,
                 bounciness : 0,
-                restDisplacementThreshold : extractCorrectRestDisplacementThreshold(dx)
+                restDisplacementThreshold : extractCorrectRestDisplacementThreshold(dx) , 
+                useNativeDriver : false
             }).start((finish) => finish.finished
                 && typeof this.ALL_ICONS_FINISH_ANIMATIONS.resolvers[icon.id] === "function"
                 && this.ALL_ICONS_FINISH_ANIMATIONS.resolvers[icon.id]());

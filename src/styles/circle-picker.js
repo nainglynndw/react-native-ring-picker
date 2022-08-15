@@ -22,7 +22,8 @@ export default StyleSheet.create({
         top : -(SQUARE_DIMENSIONS.WIDTH * 0.09 / 2),
         left : 0,
         width : SQUARE_DIMENSIONS.WIDTH * 0.09,
-        height : SQUARE_DIMENSIONS.WIDTH * 0.09
+        height : SQUARE_DIMENSIONS.WIDTH * 0.09 , 
+        transform : [{rotateZ : '-90deg'}]
     },
     iconText: {
         color: '#fff',
